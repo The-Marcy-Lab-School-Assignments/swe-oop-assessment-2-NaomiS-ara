@@ -1,53 +1,52 @@
 class Phone {
-    // private password field
-    #password;
+  // private password field
+  #password;
 
-    constructor(brand, model, password) {
-        this.brand = brand;
-        this.model = model;
-        this.#password = password;
+  constructor(brand, model, password) {
+    this.brand = brand;
+    this.model = model;
+    this.#password = password;
 
-        this.batteryLevel = 100;
+    this.batteryLevel = 100;
+  }
+
+  makeCall(number) {
+    this.batteryLevel -= 5;
+    return `Calling ${number}`;
+  }
+
+  charge() {
+    this.batteryLevel = 100;
+    return 'Phone fully charged';
+  }
+
+  unlock(password) {
+    if (password === this.#password) {
+      return true;
     }
-
-    makeCall(number) {
-        this.batteryLevel -= 5;
-        return `Calling ${number}`;
-    }
-
-    charge() {
-        this.batteryLevel = 100;
-        return "Phone fully charged";
-    }
-
-    unlock(password) {
-        if (password === this.#password) {
-            return true;
-        }
-        return false;
-    }
+    return false;
+  }
 }
 
 class iPhone extends Phone {
-    constructor(model, password, numberOfCameras) {
-        super("Apple", model, password); // brand always Apple
-        this.numberOfCameras = numberOfCameras;
-    }
+  constructor(model, password, numberOfCameras) {
+    super('Apple', model, password); // brand always Apple
+    this.numberOfCameras = numberOfCameras;
+  }
 
-    // Override makeCall
-    makeCall(number) {
-        this.batteryLevel -= 5;
-        return `Calling ${number} using FaceTime audio`;
-    }
+  // Override makeCall
+  makeCall(number) {
+    this.batteryLevel -= 5;
+    return `Calling ${number} using FaceTime audio`;
+  }
 
-    faceTime(name) {
-        this.batteryLevel -= 10;
-        return `Facetiming ${name}`;
-    }
+  faceTime(name) {
+    this.batteryLevel -= 10;
+    return `Facetiming ${name}`;
+  }
 }
 
 // TEST YOUR CODE HERE
-
 
 // DO NOT REMOVE
 module.exports = { Phone, iPhone };
