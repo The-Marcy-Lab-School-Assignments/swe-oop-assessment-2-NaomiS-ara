@@ -462,7 +462,7 @@ When you record your explanation, you will be asked to explain:
 - Why you chose the specific relationships and class responsibilities.  
 - At least one significant design decision you made and what alternatives or trade-offs you considered to arrive at your final design. 
   - Examples of significant decisions: where to store your data, how your system handles order status, which class is responsible for X, Y, or Z.
-
+ 
 ### Part 2: Create a UML Diagram
 
 As you approach finalizing your design, transition to [LucidChart](https://www.lucidchart.com/) to create your UML diagram. 
